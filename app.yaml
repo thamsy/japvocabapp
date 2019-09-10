@@ -1,0 +1,12 @@
+runtime: go112
+
+env_variables:
+  BUCKET_NAME: "example-gcs-bucket"
+
+handlers:
+  - url: /static
+    static_dir: static
+
+  - url: /.*
+    secure: always
+    script: auto

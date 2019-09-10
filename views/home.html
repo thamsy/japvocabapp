@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>Jap Vocab Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="static/img/japan.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+      <div class="row pt-3">
+        <div class="col">
+          <h1>Jap Vocab Test</h1>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-outline-dark" id="logout-submit">Logout</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>How many do you want to be tested in?</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="btn-group" role="group">
+            <a class="btn btn-primary" type="button" href="{{urlfor "TesterController.Get"}}?num=2">2</a>
+            <a class="btn btn-primary" type="button" href="{{urlfor "TesterController.Get"}}?num=4">4</a>
+            <a class="btn btn-primary" type="button" href="{{urlfor "TesterController.Get"}}?num=60">60</a>
+            <a class="btn btn-primary" type="button" href="{{urlfor "TesterController.Get"}}?num=80">80</a>
+            <a class="btn btn-primary" type="button" href="{{urlfor "TesterController.Get"}}?num=100">100</a>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-sm-5">
+        <div class="col questions-wrong">
+
+        </div>
+      </div>
+      <div class="row pt-sm-5 align-items-end">
+        <div class="col">
+          <p><small>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a></small></p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="static/js/home.js"></script>
+  </body>
+</html>

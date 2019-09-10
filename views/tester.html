@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <title>Jap Vocab Test</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="static/img/japan.png" type="image/x-icon" />
+</head>
+
+<body>
+
+{{/*Loading Screen*/}}
+<div style="width:100%;height:100%;
+    position:absolute;
+    top:0;left:0; z-index:5;
+    background: none repeat scroll 0 0 black;
+    vertical-align: middle;
+    text-align: center;"
+    class="black-screen">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-grow text-danger m-5" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center" id="eng">eng</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label for="kanaTextId">ひらがな・カタカナ</label>
+          <input type="text" class="form-control kana-text" id="kanaTextId" placeholder="ひらがな・カタカナ" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="kanjiDrawId">漢字</label><br />
+          <canvas id="kanjiDrawId" width="330" height="220" style="border: 1px solid black;">Your browser does not support the HTML 5 Canvas.</canvas><br />
+          <button type="button" class="btn btn-outline-secondary clear" id="kanjiDrawClear">Clear</button>
+          <div class="btn-group" role="group" aria-label="KanjiCorrectness">
+            <button type="button" class="btn btn-success tick" disabled>✓</button>
+            <button type="button" class="btn btn-danger cross" disabled>✕</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="grpSelectId">Group</label>
+          <select class="form-control grp-select" id="grpSelectId" >
+            <option class="grp-options" value=""></option>
+            <option class="grp-options" value="1">1</option>
+            <option class="grp-options" value="2">2</option>
+            <option class="grp-options" value="3">3</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary submit">Submit</button>
+        <button type="button" class="btn btn-info show" disabled>Show</button>
+        <button type="button" class="btn btn-outline-dark q-left float-right" disabled>Left ()</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{{/*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>*/}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+{{/*<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>*/}}
+{{/*<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>*/}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="static/js/bootstrap.bundle.min.js"></script>
+<script src="static/js/tester.js"></script>
+<script src="static/js/canvas.js"></script>
+
+</body>
+</html>
