@@ -39,7 +39,7 @@ func (this *LoginController) Post() {
 		if err != nil {
 			log.Fatalf("%+v", err)
 		}
-		sess.Set("uid", 94)
+		sess.Set("uid", secret.UID)
 		this.Ctx.Output.Status = 200
 	} else {
 		this.Ctx.Output.Status = 401
