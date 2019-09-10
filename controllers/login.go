@@ -33,6 +33,7 @@ func (this *LoginController) Post() {
 	//log.Printf(string(hash))
 
 	err = bcrypt.CompareHashAndPassword([]byte(secret.PW_HASH), []byte(pwd))
+	err2 := bcrypt.CompareHashAndPassword([]byte(secret.TESTACC_PW_HASH), []byte(pwd)) // TESTACC
 	if username == secret.EMAIL && err == nil{
 		//Set the session successful login
 		sess, err := beego.GlobalSessions.SessionStart(this.Ctx.ResponseWriter, this.Ctx.Request)
@@ -41,6 +42,16 @@ func (this *LoginController) Post() {
 		}
 		sess.Set("uid", secret.UID)
 		this.Ctx.Output.Status = 200
+	// --- TESTACC
+	} else if username == secret.TESTACC_EMAIL && err2 == nil{
+		// Set the session for test account login
+		sess, err := beego.GlobalSessions.SessionStart(this.Ctx.ResponseWriter, this.Ctx.Request)
+		if err != nil {
+			log.Fatalf("%+v", err)
+		}
+		sess.Set("uid", secret.TESTACC_UID)
+		this.Ctx.Output.Status = 200
+	// TESTACC ---
 	} else {
 		this.Ctx.Output.Status = 401
 	}
